@@ -4,3 +4,129 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg,#dddbd1,#d2dbdc);
+}
+
+p {
+    margin: 0;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+}
+
+#background-teal {
+    background-color: #029588;
+    height: 130px;
+    position: fixed;
+    z-index: 1;
+}
+
+/* ms-container */
+.ms-container {
+    display: flex;
+    height: calc(100% - 40px);
+    width: 95%;
+    margin: 0 auto; /* riguardo le media query/responsive --> margin: 0 auto 0 30px */
+    background-color: red;
+    position: relative;
+    z-index: 2;
+    top: 20px;
+    bottom: 20px;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* container row */
+.ms-row-container {
+    width: 100%;
+    margin: 0;
+}
+
+.users-container, .user-chat-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    font-weight: 700;
+}
+
+/* Intestazione users */
+#my-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    width: 100%;
+    background-color: #eaeaea;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+#my-profile .profile > img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 0 5px 0 10px;
+}
+
+/* icons-profile */
+.fa-circle-notch, .fa-comment-alt, .fa-ellipsis-v {
+    color: #b1b1b1;
+}
+
+.profile-actions span {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+/* Parte centrale users */
+main {
+    height: 100%;
+    width: 100%;
+}
+
+.notifications-container {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: #8edafc;
+}
+
+.notifications-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.notifications-container span {
+    font-weight: 600;
+}
+
+.fa-bell-slash {
+    color: #8edafc;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 20px;
+    background: white;
+    margin-left: 20px;
+}
+
+.search-chat-container {
+
+}
+
+.user-list-container {
+
+}

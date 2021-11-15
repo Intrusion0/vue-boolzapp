@@ -11,8 +11,59 @@
 </head>
 <body>
     
-    <div>
+    <div id="app">
+        <div id="background-teal" class="container-fluid"></div>
+        <div class="ms-container">
+            <div class="row ms-row-container">
+                <div class="users-container col-4">
+                    <!-- Intestazione users -->
+                    <header id="my-profile">
+                        <section class="profile">
+                            <img src="img/avatar_1.jpg" class="img-fluid" alt="profile-picture">
+                            <span>
+                                Mario Lombardo
+                            </span>
+                        </section>
+                        <section class="profile-actions">
+                            <span>
+                                <i class="fas fa-circle-notch"></i>
+                            </span>
+                            <span>
+                                <i class="fas fa-comment-alt"></i>
+                            </span>
+                            <span>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </span>
+                        </section>
+                    </header>
+                    <!-- Parte centrale users -->
+                    <main>
+                        <section class="notifications-container">
+                            <span>
+                                <i class="fas fa-bell-slash"></i>
+                            </span>
+                            <div class="notifications-text">
+                                <span>
+                                    <p>Ricevi notifiche di nuovi messaggi</p>
+                                </span>
+                                <span>
+                                    <p class="text-decoration-underline text-muted">Attiva notifiche desktop</p>
+                                </span>
+                            </div>
+                        </section>
+                        <section class="search-chat-container">
 
+                        </section>
+                        <section class="user-list-container">
+
+                        </section>
+                    </main>
+                </div>
+                <div class="user-chat-container col-8">
+    
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
