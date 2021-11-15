@@ -42,20 +42,105 @@
                             <span>
                                 <i class="fas fa-bell-slash"></i>
                             </span>
-                            <div class="notifications-text">
+                            <div class="notifications-text lh-sm">
                                 <span>
-                                    <p>Ricevi notifiche di nuovi messaggi</p>
+                                    Ricevi notifiche di nuovi messaggi
                                 </span>
                                 <span>
-                                    <p class="text-decoration-underline text-muted">Attiva notifiche desktop</p>
+                                    <a href="#">Attiva notifiche desktop</a>
                                 </span>
                             </div>
                         </section>
                         <section class="search-chat-container">
-
+                            <div class="input-group ms-input-group">
+                                <span class="input-group-text ms-input-group-text" id="inputGroup-sizing-default"><i class="fas fa-search"></i></span>
+                                <input type="text" class="form-control border-start-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cerca o inizia una nuova chat">
+                              </div>
                         </section>
+                        <!-- Sezione lista utenti -->
                         <section class="user-list-container">
-
+                            <ul class="list-group">
+                                <li tabindex="-1"> <!-- v-for per generare le varie chat -->
+                                    <div class="user-container">
+                                        <section class="user-picture">
+                                            <img src="img/avatar_2.jpg" alt="av_2">
+                                        </section>
+                                        <section class="user-text">
+                                                <div class="user-name-message">
+                                                    <span>
+                                                        Michele
+                                                    </span>
+                                                    <span>
+                                                        Tutto fatto! ...
+                                                    </span>
+                                                </div>
+                                        </section>
+                                        <section class="user-date">
+                                            10/01/2020 16:15:22
+                                        </section>
+                                    </div>
+                                </li>
+                                <li tabindex="-1">
+                                    <div class="user-container">
+                                        <section class="user-picture">
+                                            <img src="img/avatar_3.jpg" alt="av_5">
+                                        </section>
+                                        <section class="user-text">
+                                            <div class="user-name-message">
+                                                <span>
+                                                    Fabio
+                                                </span>
+                                                <span>
+                                                    Mi piacerebbe ma devo a ...
+                                                </span>
+                                            </div>
+                                        </section>
+                                        <section class="user-date">
+                                            10/01/2020 16:15:22
+                                        </section>
+                                    </div>
+                                </li>
+                                <li tabindex="-1">
+                                    <div class="user-container">
+                                        <section class="user-picture">
+                                            <img src="img/avatar_4.jpg" alt="av_4">
+                                        </section>
+                                        <section class="user-text">
+                                            <div class="user-name-message">
+                                                <span>
+                                                    Samuele
+                                                </span>
+                                                <span>
+                                                    Ah scusa! ...
+                                                </span>
+                                            </div>
+                                        </section>
+                                        <section class="user-date">
+                                            10/01/2020 16:15:22
+                                        </section>
+                                    </div>
+                                </li>
+                                <li tabindex="-1">
+                                    <div class="user-container">
+                                        <section class="user-picture">
+                                            <img src="img/avatar_3.jpg" alt="av_3">
+                                        </section>
+                                        <section class="user-text">
+                                            <div class="user-name-message">
+                                                <span>
+                                                    Luisa
+                                                </span>
+                                                <span>
+                                                    Si, ma preferirei andare al ci ...
+                                                </span>
+                                            </div>
+                                        </section>
+                                        <section class="user-date">
+                                            10/01/2020 16:15:22
+                                        </section>
+                                    </div>
+                                </li>
+                            </ul>
                         </section>
                     </main>
                 </div>
