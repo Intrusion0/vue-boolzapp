@@ -33,7 +33,6 @@ p {
     height: calc(100% - 40px);
     width: 95%;
     margin: 0 auto; /* riguardo le media query/responsive --> margin: 0 auto 0 30px */
-    background-color: red;
     position: relative;
     z-index: 2;
     top: 20px;

@@ -60,18 +60,18 @@
                         <!-- Sezione lista utenti -->
                         <section class="user-list-container">
                             <ul class="list-group">
-                                <li tabindex="-1"> <!-- v-for per generare le varie chat -->
+                                <li tabindex="-1" v-for="(contact, i) in contacts" :key="i"> <!-- v-for per generare le varie chat -->
                                     <div class="user-container">
                                         <section class="user-picture">
-                                            <img src="img/avatar_2.jpg" alt="av_2">
+                                            <img :src="contact.avatar" :alt="contact.name">
                                         </section>
                                         <section class="user-text">
                                                 <div class="user-name-message">
                                                     <span>
-                                                        Michele
+                                                        {{ contact.name }}
                                                     </span>
-                                                    <span class="fw-normal">
-                                                        Tutto fatto! ...
+                                                    <span v-for="(message, j) in messages" class="fw-normal" v-if="message.status === 'received' " :key="j">
+                                                        {{ message.text }}
                                                     </span>
                                                 </div>
                                         </section>
