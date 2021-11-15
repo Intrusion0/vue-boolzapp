@@ -54,7 +54,7 @@
                         <section class="search-chat-container">
                             <div class="input-group ms-input-group">
                                 <span class="input-group-text ms-input-group-text" id="inputGroup-sizing-default"><i class="fas fa-search"></i></span>
-                                <input type="text" class="form-control border-start-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" class="form-control ms-form-control border-start-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cerca o inizia una nuova chat">
                               </div>
                         </section>
                         <!-- Sezione lista utenti -->
@@ -70,72 +70,12 @@
                                                     <span>
                                                         Michele
                                                     </span>
-                                                    <span>
+                                                    <span class="fw-normal">
                                                         Tutto fatto! ...
                                                     </span>
                                                 </div>
                                         </section>
-                                        <section class="user-date">
-                                            10/01/2020 16:15:22
-                                        </section>
-                                    </div>
-                                </li>
-                                <li tabindex="-1">
-                                    <div class="user-container">
-                                        <section class="user-picture">
-                                            <img src="img/avatar_3.jpg" alt="av_5">
-                                        </section>
-                                        <section class="user-text">
-                                            <div class="user-name-message">
-                                                <span>
-                                                    Fabio
-                                                </span>
-                                                <span>
-                                                    Mi piacerebbe ma devo a ...
-                                                </span>
-                                            </div>
-                                        </section>
-                                        <section class="user-date">
-                                            10/01/2020 16:15:22
-                                        </section>
-                                    </div>
-                                </li>
-                                <li tabindex="-1">
-                                    <div class="user-container">
-                                        <section class="user-picture">
-                                            <img src="img/avatar_4.jpg" alt="av_4">
-                                        </section>
-                                        <section class="user-text">
-                                            <div class="user-name-message">
-                                                <span>
-                                                    Samuele
-                                                </span>
-                                                <span>
-                                                    Ah scusa! ...
-                                                </span>
-                                            </div>
-                                        </section>
-                                        <section class="user-date">
-                                            10/01/2020 16:15:22
-                                        </section>
-                                    </div>
-                                </li>
-                                <li tabindex="-1">
-                                    <div class="user-container">
-                                        <section class="user-picture">
-                                            <img src="img/avatar_3.jpg" alt="av_3">
-                                        </section>
-                                        <section class="user-text">
-                                            <div class="user-name-message">
-                                                <span>
-                                                    Luisa
-                                                </span>
-                                                <span>
-                                                    Si, ma preferirei andare al ci ...
-                                                </span>
-                                            </div>
-                                        </section>
-                                        <section class="user-date">
+                                        <section class="user-date fw-normal">
                                             10/01/2020 16:15:22
                                         </section>
                                     </div>
@@ -145,7 +85,72 @@
                     </main>
                 </div>
                 <div class="user-chat-container col-8">
-    
+                    <!-- Intestazione / chat -->
+                    <header id="chat-header">
+                        <section class="user-profile">
+                            <img src="img/avatar_2.jpg" class="img-fluid" alt="profile-picture">
+                            <div class="user-profile-text lh-sm">
+                                <span>
+                                    Michele
+                                </span>
+                                <span class="fw-normal">
+                                    Ultimo accesso oggi alle 10/01/2020 16:15:22
+                                </span>
+                            </div>
+                        </section>
+                        <section class="user-actions">
+                            <span>
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <span>
+                                <i class="fas fa-paperclip"></i>
+                            </span>
+                            <span>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </span>
+                        </section>
+                    </header>
+                    <!-- Parte centrale / chat -->
+                    <main id="chat-main">
+                        <div class="user-messages"> <!-- Messaggi dell'utente *da ricordare -->
+                            <div class="cont-user-mess">
+                                <span>
+                                    Tutto fatto!
+                                </span>
+                                <span>
+                                    10/01/2020 16:15:22
+                                </span>
+                            </div>
+                        </div>
+                        <div class="my-messages"> <!-- Miei messaggi *da ricordare -->
+                            <div class="cont-my-mess">
+                                <span>
+                                    Hai portato a spasso il cane?
+                                </span>
+                                <span>
+                                    10/01/2020 15:30:55
+                                </span>
+                            </div>
+                        </div>
+                        <div class="my-messages"> <!-- Miei messaggi *da ricordare -->
+                            <div class="cont-my-mess">
+                                <span>
+                                    Ricordati di mangiare!
+                                </span>
+                                <span>
+                                    10/01/2020 15:50:00
+                                </span>
+                            </div>
+                        </div>
+                    </main>
+                    <!-- Footer / chat -->
+                    <footer>
+                        <i class="far fa-smile"></i>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" class="form-control ms-input-group-text-footer" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="addon-wrapping">
+                          </div>
+                        <i class="fas fa-microphone"></i>
+                    </footer>
                 </div>
             </div>
         </div>
