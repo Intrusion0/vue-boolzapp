@@ -61,7 +61,7 @@
                         <!-- Sezione lista utenti -->
                         <section class="user-list-container">
                             <ul class="list-group">
-                                <li tabindex="-1" v-for="(contact, i) in contacts" :key="i"> <!-- v-for per generare le varie chat -->
+                                <li tabindex="-1" v-for="(contact, i) in contacts" @click="contact.visible = !contact.visible" :key="i"> <!-- v-for per generare le varie chat -->
                                     <div class="user-container">
                                         <section class="user-picture">
                                             <img :src="contact.avatar" :alt="contact.name">
@@ -71,7 +71,7 @@
                                                     <span>
                                                         {{ contact.name }}
                                                     </span>
-                                                    <span class="fw-normal">
+                                                    <span class="fw-normal text-truncate">
                                                         {{ contact.messages.at(-1).text }}
                                                     </span>
                                                 </div>
@@ -87,15 +87,15 @@
                 </div>
                 <div class="user-chat-container col-8">
                     <!-- Intestazione / chat -->
-                    <header id="chat-header">
+                    <header id="chat-header" v-for="(user, j) in contacts" v-if="user.visible === true" :key="j">
                         <section class="user-profile">
-                            <img src="img/avatar_2.jpg" class="img-fluid" alt="profile-picture">
+                            <img :src="user.avatar" class="img-fluid" :alt="user.name">
                             <div class="user-profile-text lh-sm">
                                 <span>
-                                    Michele
+                                    {{ user.name }}
                                 </span>
                                 <span class="fw-normal">
-                                    Ultimo accesso oggi alle 10/01/2020 16:15:22
+                                    {{ user.messages.at(-1).date }}
                                 </span>
                             </div>
                         </section>
@@ -112,34 +112,14 @@
                         </section>
                     </header>
                     <!-- Parte centrale / chat -->
-                    <main id="chat-main">
-                        <div class="my-messages"> <!-- Miei messaggi *da ricordare -->
-                            <div class="cont-my-mess">
+                    <main id="chat-main" v-for="(contact, i) in contacts" v-show="contact.visible === true" :key="'A' + i">
+                        <div v-for="(message, j) in contact.messages" :class="message.status === 'received' ? 'user-messages' : 'my-messages' " :key="'B' + j"> <!-- Miei messaggi *da ricordare -->
+                            <div :class="message.status === 'received' ? 'cont-user-mess' : 'cont-my-mess' ">
                                 <span>
-                                    Hai portato a spasso il cane?
+                                    {{ message.text }}
                                 </span>
                                 <span>
-                                    10/01/2020 15:30:55
-                                </span>
-                            </div>
-                        </div>
-                        <div class="my-messages"> <!-- Miei messaggi *da ricordare -->
-                            <div class="cont-my-mess">
-                                <span>
-                                    Ricordati di mangiare!
-                                </span>
-                                <span>
-                                    10/01/2020 15:50:00
-                                </span>
-                            </div>
-                        </div>
-                        <div class="user-messages"> <!-- Messaggi dell'utente *da ricordare -->
-                            <div class="cont-user-mess">
-                                <span>
-                                    Tutto fatto!
-                                </span>
-                                <span>
-                                    10/01/2020 16:15:22
+                                    {{ message.date }}
                                 </span>
                             </div>
                         </div>
