@@ -70,13 +70,13 @@
                                                     <span>
                                                         {{ contact.name }}
                                                     </span>
-                                                    <span v-for="(message, j) in messages" class="fw-normal" v-if="message.status === 'received' " :key="j">
-                                                        {{ message.text }}
+                                                    <span class="fw-normal">
+                                                        {{ contact.messages.at(-1).text }}
                                                     </span>
                                                 </div>
                                         </section>
                                         <section class="user-date fw-normal">
-                                            10/01/2020 16:15:22
+                                            {{ contact.messages.at(.1).date }}
                                         </section>
                                     </div>
                                 </li>
@@ -112,16 +112,6 @@
                     </header>
                     <!-- Parte centrale / chat -->
                     <main id="chat-main">
-                        <div class="user-messages"> <!-- Messaggi dell'utente *da ricordare -->
-                            <div class="cont-user-mess">
-                                <span>
-                                    Tutto fatto!
-                                </span>
-                                <span>
-                                    10/01/2020 16:15:22
-                                </span>
-                            </div>
-                        </div>
                         <div class="my-messages"> <!-- Miei messaggi *da ricordare -->
                             <div class="cont-my-mess">
                                 <span>
@@ -139,6 +129,16 @@
                                 </span>
                                 <span>
                                     10/01/2020 15:50:00
+                                </span>
+                            </div>
+                        </div>
+                        <div class="user-messages"> <!-- Messaggi dell'utente *da ricordare -->
+                            <div class="cont-user-mess">
+                                <span>
+                                    Tutto fatto!
+                                </span>
+                                <span>
+                                    10/01/2020 16:15:22
                                 </span>
                             </div>
                         </div>
