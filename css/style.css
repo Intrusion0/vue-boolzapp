@@ -83,7 +83,7 @@ p {
 }
 
 /* icons-profile */
-.fa-circle-notch, .fa-comment-alt, .fa-ellipsis-v, .fa-search, .fa-paperclip {
+.fa-circle-notch, .fa-comment-alt, .fa-ellipsis-v, .fa-chevron-down, .fa-search, .fa-paperclip {
     color: #b1b1b1;
     cursor: pointer;
 }
@@ -300,8 +300,8 @@ footer {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 50px;
-    margin: 15px 100px;
+    height: auto;
+    margin: 5px 100px;
 }
 
 .my-messages {
@@ -319,6 +319,7 @@ footer {
     width: auto;
     border-radius: 7px;
     padding: 15px 10px 5px 20px;
+    position: relative;
 }
 
 .cont-user-mess {
@@ -331,12 +332,32 @@ footer {
 
 .cont-my-mess span:first-child, .cont-user-mess span:first-child {
     font-weight: 600;
+    display: flex;
+    max-width: 85%;
 }
 
-.cont-my-mess span:last-child, .cont-user-mess span:last-child {
+.cont-my-mess span:nth-child(2), .cont-user-mess span:nth-child(2) {
     display: flex;
     justify-content: flex-end;
     font-weight: 400;
     font-size: 14px;
     color: #b7bbbc;
+}
+
+.messages-layover {
+    display: none;
+    position: absolute;
+    top: 15%;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-image: linear-gradient(195deg, transparent, transparent);
+}
+
+
+.cont-my-mess:hover .messages-layover, .cont-user-mess:hover .messages-layover{
+    display: block;
 }

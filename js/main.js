@@ -126,6 +126,9 @@ var app = new Vue({
             setTimeout(() => {
                 this.contacts[i].messages.push(this.userMessages);
             }, 1000);
+        },
+        deleteMessage(index) {
+            
         }
     }
 });
