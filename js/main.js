@@ -8,17 +8,17 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                         text: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                         text: 'Tutto fatto!',
                         status: 'received'
                     }

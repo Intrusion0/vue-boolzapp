@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mochiy+Pop+One&display=swap');
+
 /* General rules */
 * {
     margin: 0;
@@ -9,6 +11,7 @@ body {
     height: 100vh;
     width: 100%;
     background: linear-gradient(180deg,#dddbd1,#d2dbdc);
+    font-family: 'Lato', sans-serif;
 }
 
 p {
@@ -35,7 +38,7 @@ p {
 .ms-container {
     display: flex;
     height: calc(100% - 40px);
-    width: 95%;
+    width: 90%;
     margin: 0 auto; /* riguardo le media query/responsive --> margin: 0 auto 0 30px */
     position: relative;
     z-index: 2;
@@ -118,6 +121,10 @@ main {
     font-weight: 600;
 }
 
+.notifications-container span:first-child {
+    font-size: 17px;
+}
+
 .fa-bell-slash {
     height: 50px;
     width: 50px;
@@ -180,6 +187,10 @@ main {
 
 .user-list-container ul li:focus {
     background-color: #e9ebeb;
+}
+
+.user-list-container ul li:hover {
+    background-color: #f3f3f3;
 }
 
 .user-container {
@@ -307,7 +318,7 @@ footer {
     min-width: 350px;
     width: auto;
     border-radius: 7px;
-    padding: 15px 0 5px 20px;
+    padding: 15px 10px 5px 20px;
 }
 
 .cont-user-mess {
@@ -328,5 +339,4 @@ footer {
     font-weight: 400;
     font-size: 14px;
     color: #b7bbbc;
-    margin-right: 5px;
 }

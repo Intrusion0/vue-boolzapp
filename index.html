@@ -61,7 +61,7 @@
                         <!-- Sezione lista utenti -->
                         <section class="user-list-container">
                             <ul class="list-group">
-                                <li tabindex="-1" v-for="(contact, i) in contacts" @click="contact.visible = !contact.visible" :key="i"> <!-- v-for per generare le varie chat -->
+                                <li tabindex="-1" v-for="(contact, i) in contacts" @click="contact.visible = !contact.visible" :key="i">
                                     <div class="user-container">
                                         <section class="user-picture">
                                             <img :src="contact.avatar" :alt="contact.name">
@@ -95,7 +95,7 @@
                                     {{ user.name }}
                                 </span>
                                 <span class="fw-normal">
-                                    {{ user.messages.at(-1).date }}
+                                    Ultimo accesso oggi alle {{ user.messages.at(-1).date }}
                                 </span>
                             </div>
                         </section>
