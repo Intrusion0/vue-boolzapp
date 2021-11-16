@@ -113,8 +113,8 @@
                     </header>
                     <!-- Parte centrale / chat -->
                     <main id="chat-main" v-for="(contact, i) in contacts" v-show="contact.visible === true" :key="'A' + i">
-                        <div v-for="(message, j) in contact.messages" :class="message.status === 'received' ? 'user-messages' : 'my-messages' " :key="'B' + j">
-                            <div :class="message.status === 'received' ? 'cont-user-mess' : 'cont-my-mess' ">
+                        <div v-for="(message, j) in contact.messages" :class="message.status === 'received' ? 'user-messages' : 'my-messages' " :key="j">
+                            <div :class="message.status === 'received' ? 'cont-user-mess' : 'cont-my-mess' "> <!-- v-if="contact.messages.length >= 1" -->
                                 <span>
                                     {{ message.text }}
                                 </span>
@@ -123,8 +123,15 @@
                                 </span>
                                 <div class="messages-layover">
                                     <i class="fas fa-chevron-down"></i>
+                                    <ul class="dropdown-menu">
+                                        <li><button class="dropdown-item" type="button">Message info</button></li>
+                                        <li><button class="dropdown-item" type="button" @click="deleteMessage(i, j)">Delete message</button></li>
+                                      </ul>
                                 </div>
                             </div>
+                            <!-- <div v-else>
+                                Chat vuota!!
+                            </div> -->
                         </div>
                     </main>
                     <!-- Footer / chat -->

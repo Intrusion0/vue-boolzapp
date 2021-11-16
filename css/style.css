@@ -357,7 +357,11 @@ footer {
     background-image: linear-gradient(195deg, transparent, transparent);
 }
 
-
 .cont-my-mess:hover .messages-layover, .cont-user-mess:hover .messages-layover{
     display: block;
+}
+
+.dropdown-menu {
+    display: block;
+    margin: 0 0 0 -125px;
 }

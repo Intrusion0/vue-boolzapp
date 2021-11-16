@@ -127,8 +127,14 @@ var app = new Vue({
                 this.contacts[i].messages.push(this.userMessages);
             }, 1000);
         },
-        deleteMessage(index) {
-            
+        deleteMessage(index, index_second) {
+            if (this.contacts[index].messages.length > 1) {
+                this.contacts[index].messages.splice(index_second, 1);
+            } else if (this.contacts[index].messages.length == 1) {
+                this.contacts[index].messages.splice(0, 1);
+            }
+            console.log(this.contacts[index].messages.length);
+            console.log(index_second);
         }
     }
 });
