@@ -113,7 +113,7 @@
                     </header>
                     <!-- Parte centrale / chat -->
                     <main id="chat-main" v-for="(contact, i) in contacts" v-show="contact.visible === true" :key="'A' + i">
-                        <div v-for="(message, j) in contact.messages" :class="message.status === 'received' ? 'user-messages' : 'my-messages' " :key="'B' + j"> <!-- Miei messaggi *da ricordare -->
+                        <div v-for="(message, j) in contact.messages" :class="message.status === 'received' ? 'user-messages' : 'my-messages' " :key="'B' + j">
                             <div :class="message.status === 'received' ? 'cont-user-mess' : 'cont-my-mess' ">
                                 <span>
                                     {{ message.text }}
@@ -125,10 +125,10 @@
                         </div>
                     </main>
                     <!-- Footer / chat -->
-                    <footer>
+                    <footer v-for="(message, a) in contacts" v-show="message.visible === true" :key="'C' + a">
                         <i class="far fa-smile"></i>
                         <div class="input-group flex-nowrap">
-                            <input type="text" class="form-control ms-input-group-text-footer" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="addon-wrapping">
+                            <input type="text" v-model="myMessages.text" v-on:keyup.13="sendMessage(a)" class="form-control ms-input-group-text-footer" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="addon-wrapping">
                           </div>
                         <i class="fas fa-microphone"></i>
                     </footer>

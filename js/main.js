@@ -1,6 +1,11 @@
 var app = new Vue({
     el: '#app',
     data: {
+        myMessages: {
+            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+            text: '',
+            status: 'sent'
+        },
         contacts: [
             {
                 name: 'Michele',
@@ -95,6 +100,24 @@ var app = new Vue({
             if (this.contacts[index].visible === false) {
                 this.contacts[index].visible = true;
             }
+        },
+        sendMessage(i) {
+            if (this.myMessages.text.length > 1) {
+                this.contacts[i].messages.push(this.myMessages);
+            }
+            this.myMessages = {
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                text: '',
+                status: 'sent'
+            }
+            setTimeout((userMessages) => {
+                userMessages = {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    text: 'ok',
+                    status: 'received'
+                }
+                this.contacts[i].messages.push(userMessages);
+            }, 1000);
         }
     }
 });
