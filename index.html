@@ -55,13 +55,13 @@
                         <section class="search-chat-container">
                             <div class="input-group ms-input-group">
                                 <span class="input-group-text ms-input-group-text" id="inputGroup-sizing-default"><i class="fas fa-search"></i></span>
-                                <input type="text" class="form-control ms-form-control border-start-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" v-model="search" class="form-control ms-form-control border-start-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cerca o inizia una nuova chat">
                               </div>
                         </section>
                         <!-- Sezione lista utenti -->
                         <section class="user-list-container">
                             <ul class="list-group">
-                                <li tabindex="-1" v-for="(contact, i) in contacts" @click="changeVisible(i)" :key="i">
+                                <li tabindex="-1" v-for="(contact, i) in filteredContacts" @click="changeVisible(i)" :key="i">
                                     <div class="user-container">
                                         <section class="user-picture">
                                             <img :src="contact.avatar" :alt="contact.name">
@@ -77,7 +77,7 @@
                                                 </div>
                                         </section>
                                         <section class="user-date fw-normal">
-                                            {{ contact.messages.at(.1).date }}
+                                            {{ contact.messages.at(-1).date }}
                                         </section>
                                     </div>
                                 </li>

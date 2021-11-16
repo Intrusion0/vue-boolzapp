@@ -11,6 +11,7 @@ var app = new Vue({
             text: 'ok',
             status: 'received'
         },
+        search: '',
         contacts: [
             {
                 name: 'Michele',
@@ -18,17 +19,17 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        date: '10/01/2020 15:30:55',
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
-                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        date: '10/01/2020 15:50:00',
                         text: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
-                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        date: '10/01/2020 16:15:22',
                         text: 'Tutto fatto!',
                         status: 'received'
                     }
@@ -96,6 +97,13 @@ var app = new Vue({
                 ],
             },
         ]
+    },
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(user => {
+                return user.name.toLowerCase().includes(this.search.toLowerCase())
+            })
+        }
     },
     methods: {
         changeVisible(index) {
