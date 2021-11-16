@@ -61,7 +61,7 @@
                         <!-- Sezione lista utenti -->
                         <section class="user-list-container">
                             <ul class="list-group">
-                                <li tabindex="-1" v-for="(contact, i) in contacts" @click="contact.visible = !contact.visible" :key="i">
+                                <li tabindex="-1" v-for="(contact, i) in contacts" @click="changeVisible(i)" :key="i">
                                     <div class="user-container">
                                         <section class="user-picture">
                                             <img :src="contact.avatar" :alt="contact.name">

@@ -88,6 +88,12 @@ var app = new Vue({
         ]
     },
     methods: {
-        
+        changeVisible(index) {
+            if (this.contacts[index].visible === false) {
+                this.contacts[index].visible = true;
+            } else if (this.contacts[index].visible === true) {
+                this.contacts[index].visible = false;
+            }
+        }
     }
 });
