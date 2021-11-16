@@ -6,6 +6,11 @@ var app = new Vue({
             text: '',
             status: 'sent'
         },
+        userMessages: {
+            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+            text: 'ok',
+            status: 'received'
+        },
         contacts: [
             {
                 name: 'Michele',
@@ -110,13 +115,8 @@ var app = new Vue({
                 text: '',
                 status: 'sent'
             }
-            setTimeout((userMessages) => {
-                userMessages = {
-                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                    text: 'ok',
-                    status: 'received'
-                }
-                this.contacts[i].messages.push(userMessages);
+            setTimeout(() => {
+                this.contacts[i].messages.push(this.userMessages);
             }, 1000);
         }
     }
