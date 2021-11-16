@@ -71,13 +71,19 @@
                                                     <span>
                                                         {{ contact.name }}
                                                     </span>
-                                                    <span class="fw-normal text-truncate">
+                                                    <span class="fw-normal text-truncate" v-if="contact.messages.length >= 1">
                                                         {{ contact.messages.at(-1).text }}
+                                                    </span>
+                                                    <span v-else class="fw-normal text-truncate">
+                                                        Chat vuota
                                                     </span>
                                                 </div>
                                         </section>
-                                        <section class="user-date fw-normal">
+                                        <section class="user-date fw-normal" v-if="contact.messages.length >= 1">
                                             {{ contact.messages.at(-1).date }}
+                                        </section>
+                                        <section v-else class="user-date fw-normal">
+                                            
                                         </section>
                                     </div>
                                 </li>
@@ -94,8 +100,11 @@
                                 <span>
                                     {{ user.name }}
                                 </span>
-                                <span class="fw-normal">
+                                <span class="fw-normal" v-if="user.messages.length >= 1">
                                     Ultimo accesso oggi alle {{ user.messages.at(-1).date }}
+                                </span>
+                                <span v-else class="fw-normal">
+                                    Di recente
                                 </span>
                             </div>
                         </section>
