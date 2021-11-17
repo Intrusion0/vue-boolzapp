@@ -101,7 +101,7 @@ var app = new Vue({
     computed: {
         filteredContacts() {
             return this.contacts.filter(user => {
-                return user.name.toLowerCase().includes(this.search.toLowerCase())
+                return user.name.toLowerCase().trim().includes(this.search.toLowerCase().trim())
             })
         }
     },
@@ -119,7 +119,15 @@ var app = new Vue({
                 this.contacts[i].messages.push(this.myMessages);
                 setTimeout(() => {
                     this.contacts[i].messages.push(this.userMessages);
+                    this.userMessages = {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: 'ok',
+                        status: 'received'
+                    }
                 }, 1000);
+                setTimeout(() => {
+                    this.scrollToEnd();
+                }, 1001);
             }
             this.myMessages = {
                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -129,6 +137,10 @@ var app = new Vue({
         },
         deleteMessage(index, index_second) {
             this.contacts[index].messages.splice(index_second, 1);
+        },
+        scrollToEnd() {
+            var containerChat = this.$el.querySelector('#chat-main');
+            containerChat.scrollTop = containerChat.scrollHeight;
         }
     }
 });
