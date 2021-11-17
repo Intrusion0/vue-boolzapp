@@ -117,6 +117,7 @@ var app = new Vue({
         sendMessage(i) {
             if (this.myMessages.text.length > 1) {
                 this.contacts[i].messages.push(this.myMessages);
+                this.userResponses(i); // Funzione per controllare il messaggio inviato e impostare la risposta dell'utente in base a ciò che scriviamo
                 setTimeout(() => {
                     this.contacts[i].messages.push(this.userMessages);
                     this.userMessages = {
@@ -141,6 +142,52 @@ var app = new Vue({
         scrollToEnd() {
             var containerChat = this.$el.querySelector('#chat-main');
             containerChat.scrollTop = containerChat.scrollHeight;
+        },
+        userResponses(index) {
+            switch (this.myMessages.text) {
+                case 'Buongiorno':
+                    this.userMessages = {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: 'Buongiorno Mario 😄', // &#128516;
+                        status: 'received'
+                    }
+                break;
+                case 'Buonanotte':
+                    this.userMessages = {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: 'Buonanotte Mario 😴', // &#128564;
+                        status: 'received'
+                    }
+                break;
+                case 'Come ti chiami?':
+                    this.userMessages = {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: this.contacts[index].name,
+                        status: 'received'
+                    }
+                break;
+                case 'Che giorno è oggi?':
+                    this.userMessages = {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: dayjs().format('DD//MM/YYYY'),
+                        status: 'received'
+                    }
+                break;
+                case 'Mi mandi il link di youtube?':
+                    this.userMessages = {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: 'https://www.youtube.com/',
+                        status: 'received'
+                    }
+                break;
+                case 'Grazie' + ' ' + this.contacts[index].name:
+                    this.userMessages = {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: 'Figurati 😉', // &#128521;
+                        status: 'received'
+                    }
+                break;
+            }
         }
     }
 });
