@@ -352,3 +352,8 @@ footer {
     display: block;
     margin: 0 0 0 -125px;
 }
+
+.user-name-message span.writing {
+    font-weight: 700;
+    color: rgb(43, 161, 43);
+}

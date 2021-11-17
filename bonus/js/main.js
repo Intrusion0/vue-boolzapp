@@ -118,6 +118,12 @@ var app = new Vue({
             if (this.myMessages.text.length > 1) {
                 this.contacts[i].messages.push(this.myMessages);
                 this.userResponses(i); // Funzione per controllare il messaggio inviato e impostare la risposta dell'utente in base a ciò che scriviamo
+
+                // salviamo l'ultimo messaggio in una var
+                let text = document.querySelectorAll('.text-truncate')[i];
+                text.innerText = 'Sta scrivendo';
+                text.classList.add('writing');
+
                 setTimeout(() => {
                     this.contacts[i].messages.push(this.userMessages);
                     this.userMessages = {
@@ -125,10 +131,17 @@ var app = new Vue({
                         text: 'ok',
                         status: 'received'
                     }
-                }, 1000);
+
+                    let lastMessage = this.contacts[i].messages.at(-1).text;
+
+                    text.innerText = lastMessage;
+                    text.classList.remove('writing');
+
+                }, Math.floor(Math.random() * 1500) + 1000);
+
                 setTimeout(() => {
                     this.scrollToEnd();
-                }, 1001);
+                }, 2500);
             }
             this.myMessages = {
                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -144,23 +157,23 @@ var app = new Vue({
             containerChat.scrollTop = containerChat.scrollHeight;
         },
         userResponses(index) {
-            switch (this.myMessages.text) {
-                case 'Buongiorno':
+            switch (this.myMessages.text.toLowerCase().trim()) {
+                case 'buongiorno':
                     this.userMessages.text = 'Buongiorno Mario 😄'; // &#128516;
                 break;
-                case 'Buonanotte':
+                case 'buonanotte':
                     this.userMessages.text = 'Buonanotte Mario 😴'; // &#128564;
                 break;
-                case 'Come ti chiami?':
+                case 'come ti chiami?':
                     this.userMessages.text = this.contacts[index].name;
                 break;
-                case 'Che giorno è oggi?':
+                case 'che giorno è oggi?':
                     this.userMessages.text = dayjs().format('DD//MM/YYYY');
                 break;
-                case 'Mi mandi il link di youtube?':
+                case 'mi mandi il link di youtube?':
                     this.userMessages.text = 'https://www.youtube.com';
                 break;
-                case 'Grazie' + ' ' + this.contacts[index].name:
+                case 'grazie':
                     this.userMessages.text = 'Figuati 😉';
                 break;
             }
