@@ -101,7 +101,7 @@
                                     {{ user.name }}
                                 </span>
                                 <span class="fw-normal" v-if="user.messages.length >= 1">
-                                    Ultimo accesso oggi alle {{ user.messages.at(-1).date }}
+                                    Ultimo accesso: {{ user.messages.at(-1).date }}
                                 </span>
                                 <span v-else class="fw-normal">
                                     Di recente
@@ -121,9 +121,9 @@
                         </section>
                     </header>
                     <!-- Parte centrale / chat -->
-                    <main id="chat-main" v-for="(contact, i) in contacts" v-show="contact.visible === true" :key="'A' + i">
+                    <main id="chat-main" v-for="(contact, i) in contacts" v-if="contact.visible === true" :key="'A' + i">
                         <div v-for="(message, j) in contact.messages" :class="message.status === 'received' ? 'user-messages' : 'my-messages' " :key="j">
-                            <div :class="message.status === 'received' ? 'cont-user-mess' : 'cont-my-mess' "> <!-- v-if="contact.messages.length >= 1" -->
+                            <div :class="message.status === 'received' ? 'cont-user-mess' : 'cont-my-mess' ">
                                 <span>
                                     {{ message.text }}
                                 </span>
@@ -138,13 +138,10 @@
                                       </ul>
                                 </div>
                             </div>
-                            <!-- <div v-else>
-                                Chat vuota!!
-                            </div> -->
                         </div>
                     </main>
                     <!-- Footer / chat -->
-                    <footer v-for="(message, a) in contacts" v-show="message.visible === true" :key="'C' + a">
+                    <footer v-for="(message, a) in contacts" v-if="message.visible === true" :key="'C' + a">
                         <i class="far fa-smile"></i>
                         <div class="input-group flex-nowrap">
                             <input type="text" v-model="myMessages.text" v-on:keyup.13="sendMessage(a)" class="form-control ms-input-group-text-footer" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="addon-wrapping">

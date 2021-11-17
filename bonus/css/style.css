@@ -7,6 +7,19 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsla(0,0%,100%,.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.2);
+}
+
 body {
     height: 100vh;
     width: 100%;
@@ -36,20 +49,16 @@ p {
 
 /* ms-container */
 .ms-container {
-    display: flex;
-    height: calc(100% - 40px);
+    height: auto;
     width: 90%;
-    margin: 0 auto; /* riguardo le media query/responsive --> margin: 0 auto 0 30px */
+    margin: 0 auto;
     position: relative;
     z-index: 2;
     top: 20px;
-    bottom: 20px;
-    padding: 0;
 }
 
 /* container row */
 .ms-row-container {
-    width: 100%;
     margin: 0;
 }
 
@@ -61,7 +70,7 @@ p {
 }
 
 /* Intestazione users */
-#my-profile {
+#my-profile, #chat-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,11 +103,6 @@ p {
 }
 
 /* Parte centrale users */
-main {
-    height: 100%;
-    width: 100%;
-}
-
 .notifications-container {
     display: flex;
     align-items: center;
@@ -229,11 +233,6 @@ main {
 
 /* Intestazione / chat */
 #chat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 65px;
-    background-color: #eaeaea;
     border-left: 1px solid #d6d6d6;
 }
 
@@ -272,6 +271,7 @@ main {
     background-image: url('../img/background-chat.png');
     padding: 50px 0 10px;
     overflow: auto;
+    scroll-behavior: smooth;
 }
 
 /* Footer / chat */
@@ -298,8 +298,8 @@ footer {
 
 .user-messages, .my-messages {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
+    max-width: calc(100% - 200px);
     height: auto;
     margin: 5px 100px;
 }
@@ -313,11 +313,10 @@ footer {
 }
 
 .cont-my-mess, .cont-user-mess {
-    display: flex;
-    flex-direction: column;
     min-width: 350px;
+    max-width: 70%;
     width: auto;
-    border-radius: 7px;
+    border-radius: 10px;
     padding: 15px 10px 5px 20px;
     position: relative;
 }
@@ -330,17 +329,11 @@ footer {
     background-color: #d5f9ba;
 }
 
-.cont-my-mess span:first-child, .cont-user-mess span:first-child {
-    font-weight: 600;
-    display: flex;
-    max-width: 85%;
-}
-
 .cont-my-mess span:nth-child(2), .cont-user-mess span:nth-child(2) {
     display: flex;
     justify-content: flex-end;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
     color: #b7bbbc;
 }
 
@@ -348,20 +341,14 @@ footer {
     display: none;
     position: absolute;
     top: 15%;
-    right: 10px;
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 50%;
-    background-image: linear-gradient(195deg, transparent, transparent);
+    right: 15px;
 }
 
 .cont-my-mess:hover .messages-layover, .cont-user-mess:hover .messages-layover{
     display: block;
 }
 
-.dropdown-menu {
+.messages-layover:hover .dropdown-menu {
     display: block;
     margin: 0 0 0 -125px;
 }
