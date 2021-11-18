@@ -119,6 +119,7 @@ p {
 
 .notifications-text span:last-child a {
     color: #4f7485;
+    font-size: 16px;
 }
 
 .notifications-container span {
@@ -329,6 +330,10 @@ footer {
     background-color: #d5f9ba;
 }
 
+.cont-my-mess span:nth-child(1), .cont-user-mess span:nth-child(1) {
+    font-size: 16px;
+}
+
 .cont-my-mess span:nth-child(2), .cont-user-mess span:nth-child(2) {
     display: flex;
     justify-content: flex-end;
@@ -351,4 +356,89 @@ footer {
 .messages-layover:hover .dropdown-menu {
     display: block;
     margin: 0 0 0 -125px;
+}
+
+/* Responsive */
+
+@media all and (max-width: 1185px) {
+
+    /* Sezione lista utenti */
+    .user-name-message span:first-child {
+        font-size: 15px;
+    }
+    
+    .user-name-message span:last-child {
+        font-size: 13px;
+    }
+
+    .user-date {
+        font-size: 12px;
+        margin-left: 20px;
+    }
+
+    .user-list-container ul li img {
+        height: 50px;
+        width: 50px;
+    }
+
+    /* Sezione cerca utenti */
+    .ms-input-group-text, .search-chat-container input, .ms-input-group-text-footer {
+        height: 40px;
+    }
+
+    /* Sezione notifiche */
+    .notifications-container span:first-child {
+        font-size: 15px;
+    }
+
+    .notifications-text span:last-child a {
+        font-size: 12px;
+    }
+
+    .fa-bell-slash {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        font-size: 15px;
+    }
+
+    /* Sezione profilo */
+    .profile-actions {
+        margin-right: 0;
+    }
+
+    .profile-actions span, .user-actions span {
+        font-size: 15px;
+    }
+
+    .profile {
+        font-size: 14px;
+    }
+
+    /* Sezione profilo utente */
+    .user-profile-text span:first-child {
+        font-size: 16px;
+    }
+
+    .user-profile-text span:last-child {
+        font-size: 12px;
+    }
+
+    /* Sezione chat */
+    .cont-my-mess, .cont-user-mess {
+        min-width: 300px;
+    }
+
+    .cont-my-mess span:nth-child(1), .cont-user-mess span:nth-child(1) {
+        font-size: 14px;
+    }
+
+    .cont-my-mess span:nth-child(2), .cont-user-mess span:nth-child(2) {
+        font-size: 11px;
+    }
+
+    /* Sezione footer */
+    .fa-microphone, .fa-smile {
+        font-size: 20px;
+    }
 }
