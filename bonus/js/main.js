@@ -193,16 +193,22 @@ var app = new Vue({
         openSearchMess() { // Apertura container per ricercare i messaggi
             let contSearchMess = document.querySelector('.container-search-messages');
             let contIconOpen = document.querySelectorAll('.fa-search');
-            
+            let containerUserChat = document.querySelector('.user-chat-container');
+
             contSearchMess.classList.add('active');
             contIconOpen[1].classList.add('actived');
+            containerUserChat.classList.remove('col-lg','col-8');
+            containerUserChat.classList.add('col-lg-5', 'col-5');
         },
         closeSearchMess() { // Chiusura container per ricercare i messaggi
             let contSearchMess = document.querySelector('.container-search-messages');
             let contIconOpen = document.querySelectorAll('.fa-search');
+            let containerUserChat = document.querySelector('.user-chat-container');
 
             contSearchMess.classList.remove('active');
             contIconOpen[1].classList.remove('actived');
+            containerUserChat.classList.remove('col-lg-5', 'col-5');
+            containerUserChat.classList.add('col-lg', 'col-8');
         }
     }
 });
