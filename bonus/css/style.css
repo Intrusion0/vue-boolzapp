@@ -62,7 +62,7 @@ p {
     margin: 0;
 }
 
-.users-container, .user-chat-container {
+.users-container, .user-chat-container, .container-search-messages {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -142,7 +142,7 @@ p {
     background: white;
 }
 
-.search-chat-container {
+.search-chat-container, .search-messages-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,7 +155,7 @@ p {
     margin: 0 10px;
 }
 
-.ms-input-group-text, .search-chat-container input {
+.ms-input-group-text, .search-chat-container input, .search-messages-container input {
     height: 45px;
     background-color: white;
     border-color: #f1f1f1;
@@ -198,7 +198,7 @@ p {
     background-color: #f3f3f3;
 }
 
-.user-container {
+.user-container, .messages-container {
     display: flex;
     padding: 20px;
 }
@@ -361,6 +361,47 @@ footer {
 .user-name-message span.writing {
     font-weight: 700;
     color: rgb(43, 161, 43);
+}
+
+/* Sezione cerca messaggi */
+.container-search-messages {
+    height: auto;
+}
+
+.cont-text-search-messages {
+    display: flex;
+    align-items: center;
+    min-height: 65px;
+    background-color: #eaeaea;
+    padding: 0 20px 0 25px;
+    font-size: 17px;
+}
+
+.cont-text-search-messages span:first-child {
+    margin-right: 20px;
+    font-size: 22px;
+    color: #6a7376;
+    cursor: pointer;
+}
+
+/* Sezione container messaggi trovati */
+.cont-messages-found {
+    height: calc(100vh - 165px);
+    width: 100%;
+    overflow: auto;
+    background-color: #fff;
+}
+
+.messages-container {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.container-search-messages {
+    display: none;
+}
+
+.container-search-messages.active {
+    display: flex;
 }
 
 /* Responsive */

@@ -91,7 +91,7 @@
                         </section>
                     </main>
                 </div>
-                <div class="user-chat-container col-8">
+                <div class="user-chat-container col">
                     <!-- Intestazione / chat -->
                     <header id="chat-header" v-for="(user, j) in contacts" v-if="user.visible === true" :key="j">
                         <section class="user-profile">
@@ -110,7 +110,7 @@
                         </section>
                         <section class="user-actions">
                             <span>
-                                <i class="fas fa-search"></i>
+                                <i class="fas fa-search" @click="openSearchMess"></i>
                             </span>
                             <span>
                                 <i class="fas fa-paperclip"></i>
@@ -148,6 +148,31 @@
                           </div>
                         <i class="fas fa-microphone"></i>
                     </footer>
+                </div>
+                <div class="container-search-messages col-3">
+                    <section class="cont-text-search-messages">
+                        <span>
+                            <i class="fas fa-times" @click="closeSearchMess"></i>
+                        </span>
+                        <span>
+                            Cerca messaggi
+                        </span>
+                    </section>
+                    <section class="search-messages-container">
+                        <div class="input-group ms-input-group">
+                            <span class="input-group-text ms-input-group-text" id="inputGroup-sizing-default"><i class="fas fa-search"></i></span>
+                            <input type="text" v-model="searchMessages" class="form-control ms-form-control border-start-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cerca...">
+                          </div>
+                    </section>
+                    <section class="cont-messages-found">
+                        <ul class="list-group" v-for="(contact, i) in contacts" v-if="contact.visible === true" :key="i">
+                            <li tabindex="-1" v-for="(message, j) in filteredMessages " :key="j">
+                                <div class="messages-container">
+                                    {{ message.text }}
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
                 </div>
             </div>
         </div>

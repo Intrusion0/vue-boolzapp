@@ -12,6 +12,7 @@ var app = new Vue({
             status: 'received'
         },
         search: '',
+        searchMessages: '',
         contacts: [
             {
                 name: 'Michele',
@@ -103,6 +104,13 @@ var app = new Vue({
             return this.contacts.filter(user => {
                 return user.name.toLowerCase().trim().includes(this.search.toLowerCase().trim())
             })
+        },
+        filteredMessages() {
+            for (let i = 0; i < this.contacts.length; i++) {
+                return this.contacts[i].messages.filter(message => {
+                    return message.text.toLowerCase().trim().includes(this.searchMessages.toLowerCase().trim());
+                })
+            }
         }
     },
     methods: {
@@ -177,6 +185,14 @@ var app = new Vue({
                     this.userMessages.text = 'Figuati 😉';
                 break;
             }
+        },
+        openSearchMess() { // Apertura container per ricercare i messaggi
+            let contSearchMess = document.querySelector('.container-search-messages');
+            contSearchMess.classList.add('active');
+        },
+        closeSearchMess() { // Chiusura container per ricercare i messaggi
+            let contSearchMess = document.querySelector('.container-search-messages');
+            contSearchMess.classList.remove('active');
         }
     }
 });
