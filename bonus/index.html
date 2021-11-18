@@ -168,7 +168,18 @@
                         <ul class="list-group" v-for="(contact, i) in contacts" v-if="contact.visible === true" :key="i">
                             <li tabindex="-1" v-for="(message, j) in filteredMessages " :key="j">
                                 <div class="messages-container">
-                                    {{ message.text }}
+                                    <span>
+                                        {{ message.text }}
+                                    </span>
+                                    <span>
+                                        {{ message.date }}
+                                    </span>
+                                    <span class="users-text" v-if="message.status == 'received' ">
+                                        {{ contact.name }}
+                                    </span>
+                                    <span class="my-text" v-else>
+                                        Mario Lombardo
+                                    </span>
                                 </div>
                             </li>
                         </ul>

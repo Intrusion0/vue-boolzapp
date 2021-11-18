@@ -107,9 +107,11 @@ var app = new Vue({
         },
         filteredMessages() {
             for (let i = 0; i < this.contacts.length; i++) {
-                return this.contacts[i].messages.filter(message => {
-                    return message.text.toLowerCase().trim().includes(this.searchMessages.toLowerCase().trim());
-                })
+                if (this.contacts[i].visible === true) {
+                    return this.contacts[i].messages.filter(message => {
+                        return message.text.toLowerCase().trim().includes(this.searchMessages.toLowerCase().trim());
+                    })
+                }
             }
         }
     },
@@ -161,8 +163,10 @@ var app = new Vue({
             this.contacts[index].messages.splice(index_second, 1);
         },
         scrollToEnd() {
+            var containerMessages = this.$el.querySelector('.cont-messages-found');
             var containerChat = this.$el.querySelector('#chat-main');
             containerChat.scrollTop = containerChat.scrollHeight;
+            containerMessages.scrollTop = containerMessages.scrollHeight;
         },
         userResponses(index) {
             switch (this.myMessages.text.toLowerCase().trim()) {

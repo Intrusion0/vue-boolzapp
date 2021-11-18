@@ -393,7 +393,30 @@ footer {
 }
 
 .messages-container {
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid #f5f5f5;
+}
+
+.messages-container span:nth-child(2) {
+    font-size: 14px;
+    color: #b7bbbc;
+}
+
+.messages-container span:last-child {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 500;
+    font-size: 14px;
+    color: #383838;
+}
+
+.users-text {
+    text-shadow: 0 0 10px #f78d6e;
+}
+
+.my-text {
+    text-shadow: 0 0 10px lightgreen;
 }
 
 .container-search-messages {
