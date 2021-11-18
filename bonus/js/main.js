@@ -192,11 +192,17 @@ var app = new Vue({
         },
         openSearchMess() { // Apertura container per ricercare i messaggi
             let contSearchMess = document.querySelector('.container-search-messages');
+            let contIconOpen = document.querySelectorAll('.fa-search');
+            
             contSearchMess.classList.add('active');
+            contIconOpen[1].classList.add('actived');
         },
         closeSearchMess() { // Chiusura container per ricercare i messaggi
             let contSearchMess = document.querySelector('.container-search-messages');
+            let contIconOpen = document.querySelectorAll('.fa-search');
+
             contSearchMess.classList.remove('active');
+            contIconOpen[1].classList.remove('actived');
         }
     }
 });

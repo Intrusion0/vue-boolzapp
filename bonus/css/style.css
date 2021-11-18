@@ -261,6 +261,18 @@ p {
     color: gray;
 }
 
+.fa-search:hover {
+    color: #727272;
+}
+
+.actived {
+    color: #474747;
+}
+
+.fa-times:hover {
+    color: #111111;
+}
+
 /* Parte centrale / chat */
 #chat-main {
     display: flex;
